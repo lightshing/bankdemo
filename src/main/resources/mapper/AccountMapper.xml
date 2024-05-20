@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mysqldemo.mapper.AccountMapper">
+    <select id="displayAll" resultType="Account">
+        select * from account
+    </select>
+
+    <select id="search" resultType="Account">
+        select * from account where name like concat('%', #{keywords}, '%')
+    </select>
+
+    <select id="getAccountById" resultType="Account">
+        select * from account where id = #{id}
+    </select>
+
+    <select id="searchOverAge" resultType="Account">
+        select * from account where age > #{cutoffAge}
+    </select>
+
+    <insert id="insertAccount" parameterType="Account" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO account (name ,age, balance)
+        VALUES (#{name}, #{age}, #{balance})
+    </insert>
+
+    <delete id="deleteAccountById" parameterType="int">
+        DELETE FROM account
+        WHERE id = #{id}
+    </delete>
+
+
+
+</mapper>
