@@ -4,7 +4,6 @@ import com.example.mysqldemo.domain.Account;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-import java.util.Map;
 
 @Mapper
 public interface AccountMapper {
