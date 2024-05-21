@@ -34,4 +34,9 @@ public class AccountController {
         return accountService.serviceWelfare(cutoffage);
     }
 
+    @PostMapping("/fee/{cutoffage}")
+    public Response<Account> fee(@PathVariable int cutoffage, @RequestBody int value) {
+        return accountService.serviceFee(cutoffage, value);
+    }
+
 }
