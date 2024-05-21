@@ -71,8 +71,6 @@ public class AccountService {
         }
 
 
-
-
     private ExecutorService executorService = Executors.newFixedThreadPool(10);
     @Transactional
     public Response<List<Account>> serviceWelfare(int cutoff){
