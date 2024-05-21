@@ -118,7 +118,7 @@ public class AccountService {
                         if (account.getStatuscode() == 1) {
                             throw new IllegalArgumentException("非法账户");
                         }
-                        account.setBalance(account.getBalance() - 100000);
+                        account.setBalance(account.getBalance() + 100000);
                         accountMapper.deleteAccountById(account.getId());
                         accountMapper.insertAccount(account);
                     } catch (Exception e) {
